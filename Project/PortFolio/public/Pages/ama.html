@@ -33,11 +33,11 @@
       <div class="bg-white ring-1 ring-gray-100 drop-shadow-md py-5 rounded-full">
         <ul class="flex justify-evenly items-center">
           <li><a href="../index.html">Home</a></li>
-          <li>About</li>
-          <li>Project</li>
-          <li>Resume</li>
-          <li>Tools</li>
-          <li>Ama</li>
+          <li><a href="../Pages/about.html">About</a></li>
+          <li><a href="../Pages/project.html">Project</a></li>
+          <li><a href="../Pages/resume.html">Resume</a></li>
+          <li><a href="../Pages/tools.html">Tools</a></li>
+          <li><a href="../Pages/ama.html">Ama</a></li>
         </ul>
       </div>
     </div>
@@ -52,11 +52,11 @@
         <nav class="bg-white ring-1 ring-gray-100 drop-shadow-md py-5 rounded-full overflow-x-auto">
           <ul class="flex justify-evenly items-center">
             <li><a href="../index.html">Home</a></li>
-            <li>About</li>
-            <li>Project</li>
-            <li>Resume</li>
-            <li>Tools</li>
-            <li>Ama</li>
+            <li><a href="../Pages/about.html">About</a></li>
+            <li><a href="../Pages/project.html">Project</a></li>
+            <li><a href="../Pages/resume.html">Resume</a></li>
+            <li><a href="../Pages/tools.html">Tools</a></li>
+            <li><a href="../Pages/ama.html">Ama</a></li>
           </ul>
         </nav>
       </div>
@@ -66,7 +66,7 @@
 
     <div class="w-[90%] md:w-[60%] mx-auto grid grid-cols-1 gap-2 py-5">
       <div>
-        <p class="text-black">Tools.</p>
+        <p class="text-black">Ama.</p>
         <p>Here are some of the projects I've worked on</p>
       </div>
     </div>
@@ -74,8 +74,24 @@
     <!-- Content Starting -->
     <div class="w-[90%] md:w-[60%] mx-auto grid grid-cols-1 py-5 space-y-4">
       <div>
-        <img src="https://test-2-b702c.web.app/assets/java-script.png" alt="CoverImg" class="h-8"/>
-        <p>Venkatesan</p>
+        <form class="space-y-4">
+          <div class="flex flex-col justify-center items-start">
+            <label for="name">Name</label>
+            <input id="name" class="border border-gray-500" />
+          </div>
+
+          <div class="flex flex-col justify-center items-start">
+            <label for="email">Email</label>
+            <input id="email" class="border border-gray-500" />
+          </div>
+
+          <div class="flex flex-col justify-center items-start">
+            <label for="message">Enter Message</label>
+            <textarea id="message" rows="5" cols="20" class="border border-gray-500"></textarea>
+          </div>
+
+          <button class="bg-green-500 px-5 py-3 rounded-lg">Submit</button>
+        </form>
       </div>
     </div>
     <!-- Content Ending -->

@@ -1,0 +1,71 @@
+.heading {
+  color: red;
+}
+
+.bg {
+  background-color: red;
+}
+
+.bg-2 {
+  background-color: green;
+}
+
+.div-stying {
+  background-color: aqua;
+  width: 150px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.paragraph {
+  background-color: brown;
+}
+
+/*
+  min:500 - 500 and GREATER THAN 500
+
+  max:500 - 500 and Lesser Than 500
+
+*/
+/* 
+@media (max-width:500px) {
+  .paragraph {
+    background-color: green;
+  }
+} */
+
+/* @media (orientation:landscape) {
+  .paragraph {
+    background-color: green;
+    color: white;
+  }
+} */
+
+/* @media (orientation:portrait) {
+  .paragraph {
+    background-color: green;
+    color: white;
+  }
+} */
+
+/* @media (orientation:landscape) and (min-width:400px) {
+  .paragraph {
+    background-color: green;
+    color: white;
+  }
+  
+}
+
+@media (orientation:landscape) , (min-width:400px) {
+  .paragraph {
+    background-color: green;
+    color: white;
+  }
+} */
+
+@media (orientation:landscape) , not (min-width:400px) {
+  .paragraph {
+    background-color: green;
+    color: white;
+  }
+}
