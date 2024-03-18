@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - API</title>
+</head>
+
+<body>
+
+
+  <h1 id="heading">Hello World</h1>
+
+  <button id="button">Change Text Button</button>
+
+  <script>
+
+    /*dom api
+      - METHOD 
+        - getter method - getElementById("")
+        - setter method
+      - Properties 
+        - content - textContext
+
+      - Events [ to add Events there are Three Way ]
+        - onClick Events
+    */
+
+    const headingElement = document.getElementById("heading");
+    // <h1>Hello world</h1>
+
+    const buttonElement = document.getElementById("button");
+    // <button>Change Text Button</button>
+
+    console.log("Before:", headingElement.textContent)
+ 
+    buttonElement.addEventListener("click", () => {
+      console.log("Button Clicked")
+      headingElement.textContent = "Venkat"
+    })
+
+  </script>
+
+</body>
+
+</html>

@@ -29,11 +29,12 @@
       - Extrinsic Sizing 
         - When we Give Sizing to Elememt 
 
-    - overflow
+    - overflow [ Sol ]
       - overflow visible [ def ]
-        - overflow : auto / - when ever it is need
-        - scroll : diff / - 
-        - hidden : content will be hidden
+        - overflow : 
+          - auto / - when ever it is need
+          - scroll : diff / - 
+          - hidden : content will be hidden
 
     - Media Query 
 
@@ -73,23 +74,27 @@
 
     bg-red-500
 
-    'sm': '640px', -> phone 
+      Tailwind is Mobile First Approach 
+      0 - 640px : phone
+
+      'sm': '640px', -> phone 
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px', Tab
+      'md': '768px', -> Tab
       // => @media (min-width: 768px) { ... }
 
-      'lg': '1024px', Laptop
+      'lg': '1024px', -> Laptop
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px', Tv
+      'xl': '1280px', -> Tv
       // => @media (min-width: 1280px) { ... }
 
-      '2xl': '1536px', 4K TV
+      '2xl': '1536px', -> 4K TV
       // => @media (min-width: 1536px) { ... }
   -->
 
-  <div class="bg-yellow-500 w-[150px] h-[250px] overflow-hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptates quo facere,
+  <div class="bg-yellow-500 md:bg-green-400 md:text-lg w-[150px] h-[250px] overflow-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Molestiae voluptates quo facere,
     libero impedit quae inventore illo nobis amet, repudiandae soluta, quasi illum porro. Labore in dolorem inventore
     aliquam voluptatem?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptates quo facere, libero
     impedit quae inventore illo nobis amet, repudiandae soluta, quasi illum porro. Labore in dolorem inventore aliquam
@@ -101,12 +106,12 @@
 
 
 
-  <p class="bg-red-500 sm:bg-yellow-500 md:bg-gray-400 lg:bg-zinc-700 2xl:bg-green-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati illum, doloremque, eum sed beatae alias
+  <!-- <p class="bg-red-500 sm:bg-yellow-500 md:bg-gray-400 lg:bg-zinc-700 2xl:bg-green-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati illum, doloremque, eum sed beatae alias
     delectus
     ut porro officia, commodi ullam! Hic facere harum molestiae accusantium veritatis aperiam odio ut!.Lorem ipsum dolor
     sit amet, consectetur adipisicing elit. Quasi reiciendis dolore accusantium possimus harum
     officiis exercitationem maxime, perferendis autem nulla sunt iure rerum provident nam minima animi, numquam
-    doloremque sint? </p>
+    doloremque sint? </p> -->
 </body>
 
 </html>

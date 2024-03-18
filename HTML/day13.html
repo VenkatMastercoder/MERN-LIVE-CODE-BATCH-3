@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day - 13</title>
+
+  <!--
+    html:5 - Html Tem
+    link:css - Create a Link tag to Link html & Css  
+  -->
+
+  <link rel="stylesheet" href="../CSS/day13.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <!-- 
+    Selector 
+      1. Class Selector - class -> . + class_name
+      2. id Selector - id -> # + id_name  
+      3. Universal Selector - * 
+      4. Tag Selector or Element Selector - p [ 1 ]
+
+    CSS Specificity 
+
+     Universal Selector -> element Selector -> Class Selector -> id Selector -> inline Css 
+
+    Box Sizing 
+
+    -->
+
+  <p class="text-base lg:text-9xl">heading</p>
+
+  <!-- <p class="heading tracking-in-expand ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel quam quis
+    quisquam quos aut eius
+    aliquam beatae amet minima sapiente! Cumque laborum velit accusantium sit exercitationem? Magni fuga at quaerat?</p> -->
+
+  <h1 id="heading">Heading</h1>
+
+  <h2 id="heading2">Heading</h2>
+
+  <p class="paragraph" id="para" style="color: yellow;">Sample Style</p>
+
+
+  <!-- 
+    Box 1 : W - 200px , h - 200px
+      padding 20
+      w - 200px 
+
+      w - 200 + 20 * 2 = 240px
+      h - 200 + 20 * 2 = 240px 
+
+  -->
+  <div class="BOX1">
+    <p>BOX 1</p>
+  </div>
+
+  <div class="BOX2">
+    <p>BOX 2</p>
+  </div>
+
+  <div class="BOX3">
+    <p>BOX 3</p>
+  </div>
+
+  <button class="cursor-pointer bg-yellow-100 shadow-lg shadow-[red] drop-shadow-md rotate-in-2-cw">Click Me
+    Here</button>
+
+
+
+
+</body>
+
+</html>

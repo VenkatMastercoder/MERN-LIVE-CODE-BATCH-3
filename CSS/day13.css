@@ -1,0 +1,114 @@
+
+*{
+  /* border: 1px solid red; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  color: red;
+}
+
+#heading {
+  color: aqua;
+}
+
+p{
+  color: green;
+}
+
+.paragraph {
+  color: blue;
+}
+
+#para {
+  color: red;
+}
+
+/* body {
+  background-color: blue;
+} */
+
+.BOX1 {
+  background-color: blue;
+  width: 369px;
+  height: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.BOX2 {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  padding: 50px;
+
+}
+
+.BOX3 {
+  background-color: yellow;
+  width: 200px;
+  height: 200px;
+}
+
+.rotate-in-2-cw {
+	-webkit-animation: rotate-in-2-cw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: rotate-in-2-cw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes rotate-in-2-cw {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-2-cw {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+ @-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
