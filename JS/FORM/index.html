@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+
+<body>
+
+  <!-- Form 
+    - form
+
+    - input Element 
+      - placeholder 
+    - label 
+      - for
+
+    - We Will Add JS
+      - TO GET DATA 
+      - TO SEND THE DATA TO SERVER
+
+    - We Need to Handle Page Reload 
+      - e.preventDefault();
+
+    - How to Get Value from Form 
+      - name.value
+
+    - Vaildate the Form Data
+      - Normal Vaildation
+        - type
+        - required
+      - Regex Vaildation [ Basic Condition]
+        - Email 
+        - Org EMAIL OR NUMBER ❌ 
+        
+    - How to Display Error 
+      - <p id="Name_Error"></p>
+      - textContent
+
+  -->
+
+  <form id="form">
+    <!-- Enter Press or Submit Button ==> Sumbit -->
+
+    <!-- Name data-->
+    <div>
+      <label for="name">Name</label>
+      <input placeholder="Enter Name" id="name" type="text" required />
+      <p id="Name_Error"></p>
+    </div>
+
+    <!-- Email data-->
+    <div>
+      <label for="email">Email</label>
+      <input placeholder="Enter Email" id="email" />
+      <p id="Email_Error"></p>
+    </div>
+
+    <!-- password data-->
+    <div>
+      <label for="password">Password</label>
+      <input placeholder="Enter Password" id="password" type="password" />
+      <p id="Password_Error"></p>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+
+    const name = document.getElementById("name");     // <input placeholder="Enter Name" id="name" />
+    const email = document.getElementById("email");       // <input placeholder="Enter Email" id="email" />
+    const password = document.getElementById("password");     // <input placeholder="Enter PassWord" id="password" />
+
+    const form = document.getElementById("form");
+
+    const name_Error = document.getElementById("Name_Error");
+    const email_Error = document.getElementById("Email_Error");
+    const password_Error = document.getElementById("Password_Error");
+
+
+    // click 
+
+    /**
+     * Form Events 
+     * - change 
+     * - blur
+     * **/
+
+    name.addEventListener("blur", (e) => {
+      if (e.target.value === "") {
+        name_Error.textContent = "*Required"
+        name_Error.style.color = "red"
+      }
+    })
+
+    email.addEventListener("blur", (e) => {
+      if (e.target.value === "") {
+        email_Error.textContent = "*Required"
+        email_Error.style.color = "red"
+      }
+    })
+
+    password.addEventListener("blur", (e) => {
+      if (e.target.value === "") {
+        password_Error.textContent = "*Required"
+        password_Error.style.color = "red"
+      }
+    })
+
+    function validateFormData(name, email, password) {
+      console.log("From Validate Function:", name, email, password)
+
+      // Regular Expression
+      let Email_Regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+
+      if (!email.match(Email_Regex)) {
+        email_Error.textContent = "*InVaild Email"
+        email_Error.style.color = "red"
+      }
+
+      if (name === "") {
+        email_Error.textContent = "*Required"
+        email_Error.style.color = "red"
+      } else {
+        password_Error.textContent = ""
+      }
+
+      if (password === "") {
+        password_Error.textContent = "*Required"
+        password_Error.style.color = "red"
+      } else {
+        password_Error.textContent = ""
+      }
+
+    }
+
+    function saveData(name, email, password) {
+      console.log("Form Save Method:", name, email, password)
+
+
+      // it Make an Connection to FireBase
+      const firebaseConfig = {
+        apiKey: "AIzaSyCtAjZ9LAloF72wyRv04aAgeqM5rlnkCRk",
+        authDomain: "batch-3-from-545434.firebaseapp.com",
+        databaseURL: "https://batch-3-from-545434-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "batch-3-from-545434",
+        storageBucket: "batch-3-from-545434.appspot.com",
+        messagingSenderId: "959550615795",
+        appId: "1:959550615795:web:1160565986d7b58e55c786"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      // It will Create a Root of JSON Tree
+      const db = firebase.database().ref("ReqForm");
+
+      // save the Method to DB [ it take data in Form of JSON ]
+      db.push({
+        name: name,
+        email: email,
+        password: password,
+      });
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); // this will Prevent From Page Reload 
+      console.log(name.value, email.value, password.value);
+
+      // Vaildate the Form Data
+      validateFormData(name.value, email.value, password.value);
+
+      // Save the Data -> Server -> db -> Response
+      saveData(name.value, email.value, password.value);
+
+      form.reset()
+    })
+
+  </script>
+
+
+</body>
+
+</html>

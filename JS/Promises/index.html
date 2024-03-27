@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // return response.json(); // Asynchronous Execution - Promise [ Pending ] - Reject , Fulfilled
+
+    // - Asynchronous Execution - Promise [ Pending ] - Reject ,  Fulfilled
+
+    // Older Way
+    const url = "https://jsonplaceholder.typicode.com/todos/"
+    const data = fetch(url) // Asynchronous Execution - Promise - [ Pending ] - Fulfilled - Reject
+      .then((response) => {
+        return response.json() // Asynchronous Execution - Promise - [ Pending ] - Fulfilled - Reject
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      
+    // New Way
+    const fetchData = async () => {
+      try {
+        const url = "https://jsonplaceholder.typicode.com/todos/"
+        const response = await fetch(url)
+        console.log(response)   // Asynchronous - Promise - [ Pending ] - Fulfilled - Reject 
+        const data = await response.json()  // Asynchronous - Promise - [ Pending ] - Fulfilled - Reject
+        console.log(data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+
+    fetchData()
+  </script>
+
+</body>
+
+</html>
